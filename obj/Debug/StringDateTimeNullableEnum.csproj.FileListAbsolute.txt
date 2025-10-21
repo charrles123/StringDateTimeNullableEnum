@@ -1,0 +1,8 @@
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\bin\Debug\StringDateTimeNullableEnum.exe.config
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\bin\Debug\StringDateTimeNullableEnum.exe
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\bin\Debug\StringDateTimeNullableEnum.pdb
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\obj\Debug\StringDateTimeNullableEnum.csproj.AssemblyReference.cache
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\obj\Debug\StringDateTimeNullableEnum.csproj.CoreCompileInputs.cache
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\obj\Debug\StringDateTimeNullableEnum.exe
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\obj\Debug\StringDateTimeNullableEnum.pdb
+C:\Users\arlene inay\source\repos\StringDateTimeNullableEnum\StringDateTimeNullableEnum\obj\Debug\StringDateTimeNullableEnum.exe.config
