@@ -102,6 +102,72 @@ namespace StringDateTimeNullableEnum
             // Creating custom numeric format
             Console.WriteLine("Custom Numeric Format:");
             Console.WriteLine(myNumeric.ToString("PHP #, ##0.00")); // Custom format
+
+            // String format and interpolation
+            var name = "Charles";
+            var age = 24;
+            var sampleMoney = 12345.15D;
+
+            // Using String.Format
+            Console.WriteLine("Using String.Format:");
+            var stringOutput = string.Format("My name is {0}, I am {1} years old, sample computation: {2}", name, age, 2025 - age);
+            Console.WriteLine(stringOutput);
+            Console.WriteLine(string.Format("{0:C}", sampleMoney));
+            Console.WriteLine(string.Format("{0:PHP #,##0.00}", sampleMoney));
+
+            // Interpolated strings
+            Console.WriteLine("Using Interpolated Strings:");
+            Console.WriteLine($"My name is {name}, I am {age} years old, sample computation: {2025 - age}");
+            Console.WriteLine($"{sampleMoney:C}");
+            Console.WriteLine($"{sampleMoney:PHP #,##0.00}");
+
+            // Checker
+            string firstString = null;
+            var secondString = string.Empty; // Equivalent to "";
+            var thirdString = "   "; // String with only spaces
+            if(firstString == null)
+                Console.WriteLine("firstString is null");
+
+            // Versiong 1
+            if(secondString != null && secondString != string.Empty)
+                Console.WriteLine("Second string is not a Null");
+            else
+                Console.WriteLine("Second string is either Null or Empty");
+
+            // Version 2
+            if(!string.IsNullOrEmpty(secondString))
+                Console.WriteLine("Second string is not a Null");
+            else
+                Console.WriteLine("Second string is either Null or Empty");
+
+            // Check if null or whitespace
+            if(!string.IsNullOrWhiteSpace(thirdString))
+                Console.WriteLine("Third string is not a Null");
+            else
+                Console.WriteLine("Third string is either Null or WhiteSpace");
+
+            // Common Checker functions
+            var myNameForChecker = "Charles";
+            if(myNameForChecker.StartsWith("Ch"))
+                Console.WriteLine($"{myNameForChecker} starts with Ch");
+            if(myNameForChecker.EndsWith("s"))
+                Console.WriteLine($"{myNameForChecker} ends with s");
+            if(myNameForChecker.Contains("ar"))
+                Console.WriteLine($"{myNameForChecker} contains ar");
+
+            if(myNameForChecker.IndexOf("rl") >= 0)
+                Console.WriteLine($"{myNameForChecker} has rl at index {myNameForChecker.IndexOf("rl")}");
+
+            if (myNameForChecker == "Charles")
+                Console.WriteLine($"{myNameForChecker} is equal to Charles");
+            else
+                Console.WriteLine($"{myNameForChecker} is not equal to Charles");
+
+            // Igone case
+            if(myNameForChecker.Equals("charles", StringComparison.InvariantCultureIgnoreCase))
+                Console.WriteLine($"{myNameForChecker} is equal to charles (Ignore Case)");
+            else
+                Console.WriteLine($"{myNameForChecker} is \"NOT\" equal to charles (Ignore Case)");
         }
     }
 }
