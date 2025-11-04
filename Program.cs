@@ -20,7 +20,7 @@ namespace StringDateTimeNullableEnum
             myName += " Inay";
 
             // Reverse the string using for loop
-            for (int i = myName.Length -1; i >= 0 ; i--)
+            for (int i = myName.Length - 1; i >= 0; i--)
             {
                 reverseName += myName[i];
             }
@@ -32,7 +32,7 @@ namespace StringDateTimeNullableEnum
             Console.WriteLine($"Reversed using LINQ: {reversedUsingLinq}");
 
             Console.WriteLine("Print by using loop");
-            foreach(var character in myName)
+            foreach (var character in myName)
             {
                 Console.Write(character);
             }
@@ -62,7 +62,7 @@ namespace StringDateTimeNullableEnum
             // Immutable nature of strings
             // Modifying a string will create a new string in memory
             var testString = "Hello";
-            for(var number = 1; number <=5; number++)
+            for (var number = 1; number <= 5; number++)
             {
                 testString += number;
             }
@@ -72,7 +72,7 @@ namespace StringDateTimeNullableEnum
             var stringBuilder = new StringBuilder(); // Create only one instance in memory
             stringBuilder.Append("Hello");
 
-            for(var number = 1; number <= 5; number++)
+            for (var number = 1; number <= 5; number++)
             {
                 stringBuilder.Append(number.ToString());
             }
@@ -96,10 +96,12 @@ namespace StringDateTimeNullableEnum
             var myNumericInt = 12345;
             Console.WriteLine(myNumericInt.ToString("D10")); // Convert to decimal with leading zeros ex. 0000012345(10 digits)
 
-            Console.WriteLine("Number with 2 decimal places only"); 
+            Console.WriteLine("Number with 2 decimal places only");
             Console.WriteLine(myNumericInt.ToString("N2")); // Convert to number format with commas and 2 decimal places
 
             // Creating custom numeric format
+            var myPhoneNumber = 09095185275;
+            Console.WriteLine($"Custom Phone Number Format: {myPhoneNumber.ToString("0###-###-####")}");
             Console.WriteLine("Custom Numeric Format:");
             Console.WriteLine(myNumeric.ToString("PHP #, ##0.00")); // Custom format
 
@@ -125,37 +127,37 @@ namespace StringDateTimeNullableEnum
             string firstString = null;
             var secondString = string.Empty; // Equivalent to "";
             var thirdString = "   "; // String with only spaces
-            if(firstString == null)
+            if (firstString == null)
                 Console.WriteLine("firstString is null");
 
             // Versiong 1
-            if(secondString != null && secondString != string.Empty)
+            if (secondString != null && secondString != string.Empty)
                 Console.WriteLine("Second string is not a Null");
             else
                 Console.WriteLine("Second string is either Null or Empty");
 
             // Version 2
-            if(!string.IsNullOrEmpty(secondString))
+            if (!string.IsNullOrEmpty(secondString))
                 Console.WriteLine("Second string is not a Null");
             else
                 Console.WriteLine("Second string is either Null or Empty");
 
             // Check if null or whitespace
-            if(!string.IsNullOrWhiteSpace(thirdString))
+            if (!string.IsNullOrWhiteSpace(thirdString))
                 Console.WriteLine("Third string is not a Null");
             else
                 Console.WriteLine("Third string is either Null or WhiteSpace");
 
             // Common Checker functions
             var myNameForChecker = "Charles";
-            if(myNameForChecker.StartsWith("Ch"))
+            if (myNameForChecker.StartsWith("Ch"))
                 Console.WriteLine($"{myNameForChecker} starts with Ch");
-            if(myNameForChecker.EndsWith("s"))
+            if (myNameForChecker.EndsWith("s"))
                 Console.WriteLine($"{myNameForChecker} ends with s");
-            if(myNameForChecker.Contains("ar"))
+            if (myNameForChecker.Contains("ar"))
                 Console.WriteLine($"{myNameForChecker} contains ar");
 
-            if(myNameForChecker.IndexOf("rl") >= 0)
+            if (myNameForChecker.IndexOf("rl") >= 0)
                 Console.WriteLine($"{myNameForChecker} has rl at index {myNameForChecker.IndexOf("rl")}");
 
             if (myNameForChecker == "Charles")
@@ -164,10 +166,42 @@ namespace StringDateTimeNullableEnum
                 Console.WriteLine($"{myNameForChecker} is not equal to Charles");
 
             // Igone case
-            if(myNameForChecker.Equals("charles", StringComparison.InvariantCultureIgnoreCase))
+            if (myNameForChecker.Equals("charles", StringComparison.InvariantCultureIgnoreCase))
                 Console.WriteLine($"{myNameForChecker} is equal to charles (Ignore Case)");
             else
                 Console.WriteLine($"{myNameForChecker} is \"NOT\" equal to charles (Ignore Case)");
+
+            // Commonly used to manipulate string
+            var myString = "Charles pogi";
+            Console.WriteLine(myString);
+            Console.WriteLine($"Reversed: {new string(myString.Reverse().ToArray())}"); // Reverse using LINQ
+            Console.WriteLine($"Replaced: {myString.Replace("pogi", "Inay")}"); // Replace pogi with Inay
+            Console.WriteLine($"Substring: {myString.Substring(4, 3)}"); // Start at index 4, take 3 characters
+            Console.WriteLine($"ToUpper: {myString.ToUpper()}"); // Convert to upper case)
+            Console.WriteLine($"ToLower: {myString.ToLower()}"); // Convert to lower case)
+
+            var anotherString = "   Char les   ";
+            Console.WriteLine($"Trim start: '{anotherString.TrimStart(' ')}'"); // Trim starting spaces
+            Console.WriteLine($"Trim end: '{anotherString.TrimEnd(' ')}'"); // Trim ending spaces
+            Console.WriteLine($"Trim both sides: '{anotherString.Trim()}'"); // Trim spaces both sides
+            Console.WriteLine($"Trim both sides and replace: '{anotherString.Trim().Replace(" ", string.Empty)}'");
+
+            var lastString = "Charles-Inay-pogi:ako";
+            Console.WriteLine(lastString);
+            var words = lastString.Split('-'); // Split string into array using - as delimiter
+            Console.WriteLine("===WORD===");
+            foreach(var word in words)
+            {
+                Console.WriteLine($"{word}");
+            }
+
+            var wordWithMultipleDelimiters = lastString.Split(new char[] { '-', ':' }); // Split string into array using - and : as delimiters
+            Console.WriteLine("===WORD WITH MULTIPLE DELIMITERS ('-', ':')===");
+            foreach (var word in wordWithMultipleDelimiters)
+            {
+                Console.WriteLine($"{word}");
+            }
+            Console.WriteLine(string.Join("*", wordWithMultipleDelimiters)); // Join array into string using * as delimiter)
         }
     }
 }
